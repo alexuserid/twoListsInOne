@@ -40,3 +40,39 @@ func main() {
 //word1\n
 //word2\n
 //word3\n
+
+
+
+//to avoid repiting in main() you can use another code, just replace main function by following code:
+/*
+func dicMaker(files ...string) ([]string, []string, error) {
+	var enWordSl, rusWordSl []string
+	for i := range files {
+		wordSl, err := wordSlMaker(files[i])
+		if err != nil {
+			return nil, nil, err
+		}
+		if i == 0 {
+			enWordSl = wordSl
+		}
+		rusWordSl = wordSl
+	}
+	return enWordSl, rusWordSl, nil
+}
+
+func main() {
+	enWordSl, rusWordSl, err := dicMaker("enWords.txt", "ruWords.txt")
+	if err != nil {
+		log.Fatalf("dicMaker: %v", err)
+	}
+
+	dicSl := []string{}
+
+	for i := range enWordSl {
+		dicSl = append(dicSl, enWordSl[i] + " - " + rusWordSl[i] + "\n")
+	}
+
+	fmt.Println(dicSl)
+}
+*/
+//but using of the code make all code more complicate and difficult to understand
